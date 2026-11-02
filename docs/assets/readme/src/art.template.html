@@ -1,0 +1,306 @@
+<!doctype html>
+<!-- Source of the README images. Built by build.py (injects the site's tree), rendered by render.cjs.
+     Direction: "Evening lake, one light". Every colour comes from the token blocks in ../../site.css.
+     Detector waiver (skipped-heading): each section is rendered as its own image, never read as one page. -->
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8">
+<title>Stryx Skills README art</title>
+<link rel="stylesheet" href="../../site.css">
+<style>
+  html, body { margin: 0; background: transparent; }
+  .art { position: relative; width: 1280px; overflow: hidden; background: var(--color-ground); color: var(--color-ink);
+    font-family: var(--font-text); isolation: isolate; }
+  .art + .art { margin-top: 40px; }
+  /* the lake sky: one cool wash from the top, one warm light low on the left */
+  .art::before { content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(60% 70% at 78% 0%, var(--color-sky-top), transparent 70%),
+      radial-gradient(42% 60% at 8% 100%, var(--color-sun-glow), transparent 72%),
+      linear-gradient(180deg, var(--color-ground-2), var(--color-ground) 70%); }
+  .art.frame { border-radius: 28px; border: 1px solid var(--color-line); }
+  .mono { font-family: var(--font-mono); }
+  .amber { color: var(--color-sun); }
+  .k { font: 700 15px/1.3 var(--font-text); letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-ink-mute);
+    display: flex; align-items: center; gap: 14px; }
+  .k::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+
+  /* ---------- hero ---------- */
+  #hero { height: 760px; }
+  #hero .left { position: absolute; left: 72px; top: 70px; width: 820px; }
+  #hero .brand { display: flex; align-items: center; gap: 14px; font: 500 30px/1 var(--font-display); margin-bottom: 44px; }
+  #hero .brand svg { width: 34px; height: 34px; color: var(--color-sun); }
+  #hero .brand em { color: var(--color-sun); }
+  #hero h1 { font: 500 72px/0.98 var(--font-display); letter-spacing: -0.012em; margin: 20px 0 26px; }
+  #hero h1 em { display: block; color: var(--color-sun); }
+  #hero .lead { font-size: 22px; line-height: 1.5; color: var(--color-ink-soft); max-width: 27em; }
+  #hero .tree-box { position: absolute; right: 10px; top: 40px; width: 470px; }
+  #hero .tree { width: 100%; height: auto; }
+  #hero .foot { position: absolute; left: 72px; right: 72px; bottom: 50px; }
+  #hero .spectrum { margin: 0 0 30px; height: 5px; }
+  #hero .stats dd { font-size: 64px; }
+  #hero .stats dt { font-size: 17px; white-space: nowrap; }
+  #hero .stats div { justify-content: flex-start; }
+
+  /* ---------- feature pairs ---------- */
+  .pair { height: 560px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px; }
+  .card { position: relative; border-radius: 26px; background: var(--color-glass); border: 1px solid var(--color-line-strong);
+    box-shadow: 0 24px 60px -30px var(--color-shadow); padding: 34px 38px 36px; display: flex; flex-direction: column; overflow: hidden; }
+  .card::after { content: ""; position: absolute; left: 38px; top: 0; width: 120px; height: 3px; border-radius: 0 0 3px 3px; background: var(--band); }
+  .card .num { font: 500 20px/1 var(--font-display); color: var(--color-ink-mute); display: flex; gap: 12px; align-items: center; }
+  .card .num b { font-weight: 700; font-family: var(--font-text); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .card .vis { flex: 1; display: grid; place-items: center; margin: 14px 0 18px; }
+  .card h3 { font: 500 44px/1.04 var(--font-display); letter-spacing: -0.01em; }
+  .card h3 em { color: var(--color-sun); }
+  .card p { margin-top: 12px; font-size: 22px; line-height: 1.45; color: var(--color-ink-soft); }
+
+  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; font: 600 17px/1 var(--font-mono);
+    border: 1px solid var(--color-line-strong); background: var(--color-surface); color: var(--color-ink); white-space: nowrap; }
+  .chip i { width: 9px; height: 9px; border-radius: 50%; background: var(--band, var(--color-sun)); }
+  .chip.lit { border-color: var(--color-sun); box-shadow: 0 0 0 4px var(--color-sun-glow); }
+  .ask { padding: 14px 22px; border-radius: 16px; background: var(--color-surface); border: 1px solid var(--color-line-strong);
+    font-size: 20px; color: var(--color-ink); }
+  .ask small { display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-ink-mute); margin-bottom: 4px; font-weight: 700; }
+
+  /* router motif */
+  .router { width: 100%; display: grid; grid-template-columns: 250px 80px 1fr; align-items: center; }
+  .router svg { width: 80px; height: 190px; }
+  .router .fan { stroke: var(--color-sun); stroke-width: 2; fill: none; opacity: 0.85; }
+  .router .outs { display: grid; gap: 14px; justify-items: start; }
+
+  /* console motif */
+  .con { width: 100%; border-radius: 18px; background: var(--color-console); border: 1px solid var(--color-console-line); overflow: hidden; }
+  .con .bar { display: flex; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--color-console-line); align-items: center;
+    color: var(--color-console-mute); font-size: 14px; }
+  .con .bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--color-console-line); }
+  .con .row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 13px 20px;
+    font: 500 17px/1.3 var(--font-mono); color: var(--color-console-ink); }
+  .con .row + .row { border-top: 1px dashed var(--color-console-line); }
+  .con .ps { color: var(--color-console-prompt); }
+  .con .verdict { font: 700 14px/1 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-console-prompt);
+    padding: 7px 12px; border-radius: 999px; border: 1px solid var(--color-console-prompt); }
+
+  /* laws motif */
+  .laws { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; width: 100%; }
+  .dots { display: grid; grid-template-columns: repeat(9, 14px); gap: 9px; }
+  .dots span { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--color-line-strong); }
+  .dots span.on { background: var(--color-sun); border-color: var(--color-sun); }
+  .ops { display: flex; flex-wrap: wrap; gap: 10px; }
+  .card .big { margin: 0; font: 500 72px/1 var(--font-display); }
+  .big small { display: block; font: 700 14px/1.3 var(--font-text); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-ink-mute); margin-top: 6px; }
+
+  /* gpu motif */
+  .gpu { display: grid; grid-template-columns: 210px 1fr; gap: 30px; align-items: center; width: 100%; }
+  .gpu svg { width: 210px; height: 170px; }
+  .gpu .board { fill: var(--color-surface); stroke: var(--color-line-strong); stroke-width: 2; }
+  .gpu .die { fill: none; stroke: var(--color-sun); stroke-width: 2.5; }
+  .gpu .pin { stroke: var(--color-ink-mute); stroke-width: 2; }
+  .gpu .fanb { fill: none; stroke: var(--color-ink-mute); stroke-width: 1.5; }
+  .gpu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .gpu li { display: flex; justify-content: space-between; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px;
+    background: var(--color-surface); border: 1px solid var(--color-line); font-size: 19px; }
+  .gpu li span { font-size: 15px; color: var(--color-ink-mute); }
+
+  /* codeword motif */
+  .keys { display: grid; gap: 14px; width: 100%; }
+  .key { display: grid; grid-template-columns: 190px 1fr; gap: 20px; align-items: center; }
+  .key kbd { font: 700 19px/1 var(--font-mono); text-align: center; padding: 15px 0; border-radius: 14px; background: var(--color-surface);
+    border: 1px solid var(--color-line-strong); border-bottom-width: 4px; color: var(--color-ink); }
+  .key kbd.lit { border-color: var(--color-sun); color: var(--color-sun); }
+  .key span { font-size: 19px; color: var(--color-ink-soft); }
+
+  /* lanes motif */
+  .lanes { display: grid; gap: 12px; width: 100%; }
+  .lane { display: grid; grid-template-columns: 220px 1fr 70px; gap: 16px; align-items: center; font: 600 16px/1 var(--font-mono); }
+  .lane .track { height: 10px; border-radius: 99px; background: var(--color-line); overflow: hidden; }
+  .lane .track b { display: block; height: 100%; border-radius: 99px; background: var(--band); }
+  .lane em { font: 700 13px/1 var(--font-text); font-style: normal; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink-mute); text-align: right; }
+  .lane.you { font-family: var(--font-text); font-size: 18px; color: var(--color-sun); }
+
+  /* ---------- flow ---------- */
+  #flow { height: 600px; padding: 56px 60px; }
+  #flow h2 { font: 500 52px/1 var(--font-display); }
+  #flow h2 em { color: var(--color-sun); }
+  #flow .river { position: absolute; left: 60px; right: 60px; top: 315px; height: 4px; border-radius: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-sun) 8%, var(--color-sun) 92%, transparent); opacity: 0.55; }
+  #flow .river::after { content: ""; position: absolute; inset: -12px 0; background: linear-gradient(90deg, transparent, var(--color-sun-glow), transparent); filter: blur(8px); }
+  #flow .steps { position: absolute; left: 60px; right: 60px; top: 200px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+  .step { display: flex; flex-direction: column; gap: 12px; }
+  .step .n { font: 500 20px/1 var(--font-display); color: var(--color-ink-mute); height: 26px; }
+  .step .node { position: relative; height: 0; margin: 100px 0 40px; }
+  .step .node::before { content: ""; position: absolute; left: 0; top: -12px; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--color-ground); border: 3px solid var(--color-sun); box-shadow: 0 0 0 8px var(--color-sun-glow); }
+  .step.end .node::before { background: var(--color-sun); }
+  .step .top { position: absolute; top: 40px; left: 0; right: 0; }
+  .step h3 { font: 500 30px/1.05 var(--font-display); }
+  .step p { font-size: 18px; line-height: 1.45; color: var(--color-ink-soft); }
+  .step .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .step .chip { font-size: 14px; padding: 7px 12px; }
+
+  /* ---------- closing ---------- */
+  #closing { height: 440px; padding: 70px 72px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+  #closing h2 { font: 500 56px/1 var(--font-display); letter-spacing: -0.01em; }
+  #closing h2 em { display: block; color: var(--color-sun); }
+  #closing .fine2 { margin-top: 22px; font-size: 19px; white-space: nowrap; color: var(--color-ink-mute); }
+  #closing .con .row { font-size: 17px; padding: 24px 22px; white-space: nowrap; }
+  #closing .btns { display: flex; gap: 14px; margin-top: 22px; }
+  .pill { display: inline-flex; align-items: center; height: 58px; padding: 0 30px; border-radius: 999px; font: 700 19px/1 var(--font-text); }
+  .pill.brand { background: var(--gradient-brand); color: var(--color-on-brand); }
+  .pill.ghost { border: 1px solid var(--color-line-strong); color: var(--color-ink); background: var(--color-surface); }
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<section class="art frame" id="hero">
+  <div class="left">
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><polygon points="32,6 54,20 54,44 32,58 10,44 10,20"/><path d="M32 6V58M10 20L54 44M54 20L10 44" stroke-width="1.4" opacity=".55"/></g><circle cx="32" cy="32" r="6" fill="currentColor"/></svg>Stryx <em>Skills</em></div>
+    <p class="k">For Claude Code · Windows</p>
+    <h1>The lab's methods, <em>grown into one tree.</em></h1>
+    <p class="lead">94 skills and 32 agents, each written for one kind of work. Claude loads the right one by itself, and nothing counts as done until a check proves it.</p>
+  </div>
+  <div class="tree-box"><!--TREE--></div>
+  <div class="foot">
+    <div class="spectrum"><span style="--band:var(--g0);flex:15"></span><span style="--band:var(--g1);flex:13"></span><span style="--band:var(--g2);flex:10"></span><span style="--band:var(--g3);flex:12"></span><span style="--band:var(--g4);flex:17"></span><span style="--band:var(--g5);flex:9"></span><span style="--band:var(--g6);flex:15"></span><span style="--band:var(--g7);flex:3"></span></div>
+    <dl class="stats">
+      <div><dt>skills in eight groups</dt><dd>94</dd></div>
+      <div><dt>agents work beside them</dt><dd>32</dd></div>
+      <div><dt>hook files act on their own</dt><dd>46</dd></div>
+      <div><dt>design laws, each checked</dt><dd>62</dd></div>
+      <div><dt>ready ops for design</dt><dd>52</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 2. FEATURES: router + proof -->
+<section class="art frame pair" id="features-1">
+  <article class="card" style="--band:var(--g0)">
+    <p class="num">01 <b>Router</b></p>
+    <div class="vis">
+      <div class="router">
+        <div class="ask"><small>You type</small>Fix the white screen in my React app</div>
+        <svg viewBox="0 0 80 190" preserveAspectRatio="none" aria-hidden="true"><path class="fan" d="M0 95 C40 95 40 25 80 25"/><path class="fan" d="M0 95 H80"/><path class="fan" d="M0 95 C40 95 40 165 80 165"/></svg>
+        <div class="outs"><span class="chip lit" style="--band:var(--g1)"><i></i>stryx:debug</span><span class="chip lit" style="--band:var(--g3)"><i></i>stryx:react</span><span class="chip lit" style="--band:var(--g1)"><i></i>stryx:verify</span></div>
+      </div>
+    </div>
+    <h3>The right method, <em>without asking.</em></h3>
+    <p>A router picks every skill a request needs before Claude starts.</p>
+  </article>
+  <article class="card" style="--band:var(--g1)">
+    <p class="num">02 <b>Hooks</b></p>
+    <div class="vis">
+      <div class="con">
+        <div class="bar"><i></i><i></i><i></i><span>Claude Code, with Stryx hooks</span></div>
+        <div class="row"><span><span class="ps">&gt;</span> rm -rf ./data</span><span class="verdict">Blocked</span></div>
+        <div class="row"><span><span class="ps">&gt;</span> commit config with API key</span><span class="verdict">Secret found</span></div>
+        <div class="row"><span><span class="ps">&gt;</span> "All done, it works"</span><span class="verdict">Show proof</span></div>
+      </div>
+    </div>
+    <h3>Done means <em>proven.</em></h3>
+    <p>46 hook files act on their own: a guard, a secret scanner, a stop judge.</p>
+  </article>
+</section>
+
+<!-- 3. FEATURES: design brain + local GPU -->
+<section class="art frame pair" id="features-2">
+  <article class="card" style="--band:var(--g2)">
+    <p class="num">03 <b>Design brain</b></p>
+    <div class="vis">
+      <div class="laws">
+        <div class="dots" id="lawdots"></div>
+        <div>
+          <p class="big">62<small>laws, each with a check and a fix</small></p>
+          <div class="ops" style="margin-top:18px"><span class="chip">glass</span><span class="chip">metal</span><span class="chip">water</span><span class="chip">sky</span><span class="chip">light</span></div>
+        </div>
+      </div>
+    </div>
+    <h3>Designs held <em>to rules.</em></h3>
+    <p>Every design is checked against 62 laws, with 52 ready ops to build from.</p>
+  </article>
+  <article class="card" style="--band:var(--g4)">
+    <p class="num">04 <b>Local GPU</b></p>
+    <div class="vis">
+      <div class="gpu">
+        <svg viewBox="0 0 210 170" aria-hidden="true">
+          <rect class="board" x="6" y="20" width="198" height="120" rx="14"/>
+          <rect class="die" x="70" y="48" width="70" height="64" rx="8"/>
+          <circle class="fanb" cx="38" cy="80" r="20"/><circle class="fanb" cx="172" cy="80" r="20"/>
+          <path class="pin" d="M30 140v18M50 140v18M70 140v18M90 140v18M110 140v18M130 140v18M150 140v18M170 140v18"/>
+        </svg>
+        <ul><li>Ollama <span>text models</span></li><li>LM Studio <span>text models</span></li><li>ComfyUI <span>pictures</span></li></ul>
+      </div>
+    </div>
+    <h3>Your graphics card <em>goes first.</em></h3>
+    <p>Pictures and bulk side work run on your own GPU when you have one.</p>
+  </article>
+</section>
+
+<!-- 4. FEATURES: codewords + agents -->
+<section class="art frame pair" id="features-3">
+  <article class="card" style="--band:var(--g7)">
+    <p class="num">05 <b>Codewords</b></p>
+    <div class="vis">
+      <div class="keys">
+        <div class="key"><kbd>coldstart</kbd><span>Hold. Talk and look, change nothing.</span></div>
+        <div class="key"><kbd class="lit">hotstart</kbd><span>Go. One task at a time, each verified.</span></div>
+        <div class="key"><kbd>firestart</kbd><span>Load the mission's skills, then go.</span></div>
+      </div>
+    </div>
+    <h3>One word <em>steers Claude.</em></h3>
+    <p>Stop it, start it or load it up with a single typed word.</p>
+  </article>
+  <article class="card" style="--band:var(--g5)">
+    <p class="num">06 <b>Agents</b></p>
+    <div class="vis">
+      <div class="lanes">
+        <div class="lane" style="--band:var(--g1)">stryx:debugger<span class="track"><b style="width:72%"></b></span><em>running</em></div>
+        <div class="lane" style="--band:var(--g4)">stryx:tester<span class="track"><b style="width:46%"></b></span><em>running</em></div>
+        <div class="lane" style="--band:var(--g6)">stryx:reviewer<span class="track"><b style="width:100%"></b></span><em>report</em></div>
+        <div class="lane" style="--band:var(--g2)">stryx:designer<span class="track"><b style="width:28%"></b></span><em>running</em></div>
+        <div class="lane you">Your chat<span class="track" style="background:none;border-top:2px dashed var(--color-sun);height:0;border-radius:0"></span><em class="amber">free</em></div>
+      </div>
+    </div>
+    <h3>32 agents <em>in the background.</em></h3>
+    <p>Big jobs go to a matching agent, so the chat stays free to talk.</p>
+  </article>
+</section>
+
+<!-- 5. FLOW -->
+<section class="art frame" id="flow">
+  <p class="k">How it works</p>
+  <h2 style="margin-top:16px">From request <em>to proven done.</em></h2>
+  <div class="river"></div>
+  <div class="steps">
+    <div class="step"><div class="node"></div><p class="n">1</p><h3>Your request</h3><p>Plain words, as you would say them.</p></div>
+    <div class="step"><div class="node"></div><p class="n">2</p><h3>The router</h3><p>A hook reads it and names the skills before Claude starts.</p></div>
+    <div class="step"><div class="node"></div><p class="n">3</p><h3>The skills</h3><div class="chips"><span class="chip">stryx:design</span><span class="chip">stryx:react</span><span class="chip">stryx:verify</span></div></div>
+    <div class="step"><div class="node"></div><p class="n">4</p><h3>The checks</h3><p>Guard, secret scanner, design detector, test check.</p></div>
+    <div class="step end"><div class="node"></div><p class="n">5</p><h3 class="amber">Done, proven</h3><p>The stop judge lets "done" through only with evidence.</p></div>
+  </div>
+</section>
+
+<!-- 6. CLOSING -->
+<section class="art frame" id="closing">
+  <div>
+    <h2>Grow the tree <em>in your Claude Code.</em></h2>
+    <p class="fine2">Free to use. No fee, no subscription, no key, no sign-up.</p>
+  </div>
+  <div>
+    <div class="con">
+      <div class="bar"><i></i><i></i><i></i><span>Windows PowerShell</span></div>
+      <div class="row"><span><span class="ps">PS&gt;</span> <span class="ps">irm</span> https://skills.stryxlabs.com/install.ps1 <span class="ps">| iex</span></span></div>
+    </div>
+    <div class="btns"><span class="pill brand">Install on Windows</span><span class="pill ghost">Zip on Releases, 982 MB</span></div>
+  </div>
+</section>
+
+<script>
+  // 62 law dots, a few lit: decoration only.
+  const d = document.getElementById('lawdots');
+  const lit = new Set([2, 9, 13, 20, 27, 31, 38, 44, 50, 57]);
+  for (let i = 0; i < 63; i++) { if (i === 62) break; const s = document.createElement('span'); if (lit.has(i)) s.className = 'on'; d.appendChild(s); }
+  const t = new URLSearchParams(location.search).get('theme');
+  if (t) document.documentElement.className = t === 'dark' ? 'dark' : '';
+</script>
+</body>
+</html>
