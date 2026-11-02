@@ -19,6 +19,23 @@
       radial-gradient(42% 60% at 8% 100%, var(--color-sun-glow), transparent 72%),
       linear-gradient(180deg, var(--color-ground-2), var(--color-ground) 70%); }
   .art.frame { border-radius: 28px; border: 1px solid var(--color-line); }
+
+  /* ---------- GPU paintings as backgrounds (paint/*.jpg, made with brain make art) ---------- */
+  .bg { position: absolute; inset: 0; z-index: -1; background: var(--paint) var(--pos, center) / cover no-repeat; }
+  .bg::after { content: ""; position: absolute; inset: 0; background: var(--scrim); }
+  .dark .bg { --scrim: linear-gradient(90deg, color-mix(in oklab, var(--color-ground) 82%, transparent) 0%,
+      color-mix(in oklab, var(--color-ground) 50%, transparent) 46%, transparent 72%); }
+  /* light: the same painting, washed in the paper tone so dark text reads on it */
+  .bg { --scrim: linear-gradient(90deg, color-mix(in oklab, var(--color-ground) 97%, transparent) 0%,
+      color-mix(in oklab, var(--color-ground) 90%, transparent) 50%, color-mix(in oklab, var(--color-ground) 45%, transparent) 100%); }
+  .bg.even { --scrim: color-mix(in oklab, var(--color-ground) 93%, transparent); }
+  .dark .bg.even { --scrim: color-mix(in oklab, var(--color-ground) 35%, transparent); }
+  .hero-bg { --pos: center; }
+  .dark .hero-bg { --scrim: linear-gradient(90deg, color-mix(in oklab, var(--color-ground) 80%, transparent) 0%, color-mix(in oklab, var(--color-ground) 35%, transparent) 50%, transparent 70%),
+      linear-gradient(0deg, color-mix(in oklab, var(--color-ground) 88%, transparent) 0%, transparent 34%); }
+  .hero-bg { --scrim: linear-gradient(90deg, color-mix(in oklab, var(--color-ground) 97%, transparent) 0%, color-mix(in oklab, var(--color-ground) 88%, transparent) 52%, color-mix(in oklab, var(--color-ground) 42%, transparent) 100%),
+      linear-gradient(0deg, color-mix(in oklab, var(--color-ground) 97%, transparent) 0%, color-mix(in oklab, var(--color-ground) 80%, transparent) 30%, transparent 48%); }
+  .card { backdrop-filter: blur(14px) saturate(1.1); }
   .mono { font-family: var(--font-mono); }
   .amber { color: var(--color-sun); }
   .k { font: 700 15px/1.3 var(--font-text); letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-ink-mute);
@@ -138,12 +155,13 @@
   .step .chip { font-size: 14px; padding: 7px 12px; }
 
   /* ---------- closing ---------- */
-  #closing { height: 440px; padding: 70px 72px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+  #closing { height: 500px; padding: 60px 72px; display: grid; grid-template-columns: 640px; gap: 26px; align-content: center; }
+  #closing .con { width: 620px; }
   #closing h2 { font: 500 56px/1 var(--font-display); letter-spacing: -0.01em; }
   #closing h2 em { display: block; color: var(--color-sun); }
   #closing .fine2 { margin-top: 22px; font-size: 19px; white-space: nowrap; color: var(--color-ink-mute); }
   #closing .con .row { font-size: 17px; padding: 24px 22px; white-space: nowrap; }
-  #closing .btns { display: flex; gap: 14px; margin-top: 22px; }
+  #closing .btns { display: flex; gap: 14px; margin-top: 18px; }
   .pill { display: inline-flex; align-items: center; height: 58px; padding: 0 30px; border-radius: 999px; font: 700 19px/1 var(--font-text); }
   .pill.brand { background: var(--gradient-brand); color: var(--color-on-brand); }
   .pill.ghost { border: 1px solid var(--color-line-strong); color: var(--color-ink); background: var(--color-surface); }
@@ -159,7 +177,7 @@
     <h1>The lab's methods, <em>grown into one tree.</em></h1>
     <p class="lead">94 skills and 32 agents, each written for one kind of work. Claude loads the right one by itself, and nothing counts as done until a check proves it.</p>
   </div>
-  <div class="tree-box"><!--TREE--></div>
+  <div class="bg hero-bg" style="--paint:url(paint/hero.jpg)"></div>
   <div class="foot">
     <div class="spectrum"><span style="--band:var(--g0);flex:15"></span><span style="--band:var(--g1);flex:13"></span><span style="--band:var(--g2);flex:10"></span><span style="--band:var(--g3);flex:12"></span><span style="--band:var(--g4);flex:17"></span><span style="--band:var(--g5);flex:9"></span><span style="--band:var(--g6);flex:15"></span><span style="--band:var(--g7);flex:3"></span></div>
     <dl class="stats">
@@ -174,6 +192,7 @@
 
 <!-- 2. FEATURES: router + proof -->
 <section class="art frame pair" id="features-1">
+  <div class="bg even" style="--paint:url(paint/lake.jpg)"></div>
   <article class="card" style="--band:var(--g0)">
     <p class="num">01 <b>Router</b></p>
     <div class="vis">
@@ -203,6 +222,7 @@
 
 <!-- 3. FEATURES: design brain + local GPU -->
 <section class="art frame pair" id="features-2">
+  <div class="bg even" style="--paint:url(paint/lake.jpg);--pos:center 30%"></div>
   <article class="card" style="--band:var(--g2)">
     <p class="num">03 <b>Design brain</b></p>
     <div class="vis">
@@ -237,6 +257,7 @@
 
 <!-- 4. FEATURES: codewords + agents -->
 <section class="art frame pair" id="features-3">
+  <div class="bg even" style="--paint:url(paint/lake.jpg);--pos:center 70%"></div>
   <article class="card" style="--band:var(--g7)">
     <p class="num">05 <b>Codewords</b></p>
     <div class="vis">
@@ -267,6 +288,7 @@
 
 <!-- 5. FLOW -->
 <section class="art frame" id="flow">
+  <div class="bg even flow-bg" style="--paint:url(paint/lake.jpg)"></div>
   <p class="k">How it works</p>
   <h2 style="margin-top:16px">From request <em>to proven done.</em></h2>
   <div class="river"></div>
@@ -281,6 +303,7 @@
 
 <!-- 6. CLOSING -->
 <section class="art frame" id="closing">
+  <div class="bg" style="--paint:url(paint/closing.jpg)"></div>
   <div>
     <h2>Grow the tree <em>in your Claude Code.</em></h2>
     <p class="fine2">Free to use. No fee, no subscription, no key, no sign-up.</p>
