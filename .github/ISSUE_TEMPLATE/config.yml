@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Install Stryx Skills
+    url: https://skills.stryxlabs.com/#install
+    about: The install command and the full 3D version.
+  - name: Find a skill
+    url: https://skills.stryxlabs.com/
+    about: Every skill and agent, and what each is for.
+  - name: License questions
+    url: https://stryxlabs.com/license
+    about: What the Stryx Labs License v1.1 allows.

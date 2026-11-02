@@ -1,0 +1,46 @@
+name: Feature request
+description: A skill, agent, hook or change you would like to see.
+title: "[Idea]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: job
+    attributes:
+      label: The job you are trying to do
+      description: What you ask Claude Code to do, and where the set falls short today.
+      placeholder: I often ask Claude to ..., and today it ...
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you would like
+      description: The skill, agent, hook or change that would help, in your own words.
+    validations:
+      required: true
+  - type: dropdown
+    id: group
+    attributes:
+      label: Closest group
+      options:
+        - Plan and decide
+        - Quality
+        - Design and media
+        - Languages
+        - Web and data
+        - Writing
+        - Workflow
+        - Modes
+        - Not sure
+  - type: textarea
+    id: example
+    attributes:
+      label: An example
+      description: A request you would type, and what a good result would look like.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I searched the open issues and this idea is new.
+          required: true

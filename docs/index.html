@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stryx Skills for Claude Code: 94 skills and 32 agents</title>
+<meta name="description" content="Stryx Skills gives Claude Code the methods Stryx Labs uses on its own products: 94 skills, 32 agents and 46 hook files. Free to use. Installs on Windows.">
+<link rel="canonical" href="https://omanishay-cyber.github.io/stryx-skills/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070b17" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Stryx Labs">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stryx Skills">
+<meta property="og:title" content="Stryx Skills: the lab's methods, grown into one tree">
+<meta property="og:description" content="94 skills, 32 agents and 46 hook files for Claude Code, from Stryx Labs in New Jersey. Free to use. Installs on Windows with one command.">
+<meta property="og:url" content="https://omanishay-cyber.github.io/stryx-skills/">
+<meta property="og:image" content="https://omanishay-cyber.github.io/stryx-skills/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Stryx Skills: a tree of eight coloured branches, one per group, beside the words The lab's methods, grown into one tree.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stryx Skills: the lab's methods, grown into one tree">
+<meta name="twitter:description" content="94 skills, 32 agents and 46 hook files for Claude Code. Free to use. Installs on Windows with one command.">
+<meta name="twitter:image" content="https://omanishay-cyber.github.io/stryx-skills/og.png">
+<meta name="twitter:image:alt" content="Stryx Skills: a tree of eight coloured branches, one per group.">
+<link rel="icon" href="https://omanishay-cyber.github.io/stryx-skills/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="https://omanishay-cyber.github.io/stryx-skills/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://omanishay-cyber.github.io/stryx-skills/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/didot-m42.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/optima.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("stryx-theme");
+    var dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.add("js");
+    document.documentElement.classList.toggle("dark", dark);
+    if (localStorage.getItem("stryx-motion") === "paused") document.documentElement.classList.add("is-paused");
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://stryxlabs.com/#organization",
+      "name": "Stryx Labs",
+      "url": "https://stryxlabs.com/",
+      "description": "An independent technology laboratory in New Jersey. It builds local-first tools for the AI era.",
+      "foundingDate": "2026",
+      "founder": [
+        {"@type": "Person", "name": "Anish Trivedi"},
+        {"@type": "Person", "name": "Kruti Trivedi"}
+      ],
+      "address": {"@type": "PostalAddress", "addressRegion": "NJ", "addressCountry": "US"},
+      "sameAs": ["https://skills.stryxlabs.com/"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://omanishay-cyber.github.io/stryx-skills/#software",
+      "name": "Stryx Skills",
+      "description": "Gives Claude Code the methods Stryx Labs uses on its own products: 94 skills in eight groups, 32 agents and 46 hook files.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows",
+      "softwareVersion": "3.0.0",
+      "url": "https://skills.stryxlabs.com/",
+      "downloadUrl": "https://skills.stryxlabs.com/#install",
+      "installUrl": "https://skills.stryxlabs.com/#install",
+      "license": "https://stryxlabs.com/license",
+      "image": "https://omanishay-cyber.github.io/stryx-skills/og.png",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "publisher": {"@id": "https://stryxlabs.com/#organization"},
+      "author": {"@id": "https://stryxlabs.com/#organization"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://omanishay-cyber.github.io/stryx-skills/#webpage",
+      "url": "https://omanishay-cyber.github.io/stryx-skills/",
+      "name": "Stryx Skills for Claude Code: 94 skills and 32 agents",
+      "about": {"@id": "https://omanishay-cyber.github.io/stryx-skills/#software"},
+      "publisher": {"@id": "https://stryxlabs.com/#organization"},
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omanishay-cyber.github.io/stryx-skills/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is a skill?", "acceptedAnswer": {"@type": "Answer", "text": "A written method for one kind of work: when to use it, what it covers, what it hands on, and the checks that prove it is done. Every skill page also says what it is not for, and which skill takes over."}},
+        {"@type": "Question", "name": "Does it cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. You can use it at no cost: no fee, no subscription, no key and no sign-up. The Stryx Labs License v1.1 allows personal and commercial use."}},
+        {"@type": "Question", "name": "Which systems does it run on?", "acceptedAnswer": {"@type": "Answer", "text": "Windows today. It runs on your own machine."}},
+        {"@type": "Question", "name": "Can I install one skill on its own?", "acceptedAnswer": {"@type": "Answer", "text": "No. The command installs all 94 skills, 32 agents and the brain program as one set. The books only make the tree together."}},
+        {"@type": "Question", "name": "Where is the source?", "acceptedAnswer": {"@type": "Answer", "text": "Not in this repository. It holds the project page and the issue tracker only. The set installs from skills.stryxlabs.com, and its licence does not allow posting it on GitHub."}},
+        {"@type": "Question", "name": "Where do I report a bug or ask for a feature?", "acceptedAnswer": {"@type": "Answer", "text": "Open an issue in this repository with the bug form or the feature form. Take keys and passwords out of any log before you paste it."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topnav">
+  <div class="wrap topnav-in">
+    <a class="brand" href="#top" aria-label="Stryx Skills, back to top">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><polygon points="32,6 54,20 54,44 32,58 10,44 10,20"/><path d="M32 6V58M10 20L54 44M54 20L10 44" stroke-width="1.4" opacity=".55"/></g><circle cx="32" cy="32" r="6" fill="currentColor"/></svg>
+      <span>Stryx <em>Skills</em></span>
+    </a>
+    <nav aria-label="Sections">
+      <ul class="navlinks">
+        <li><a href="#what">What it does</a></li>
+        <li><a href="#groups">The tree</a></li>
+        <li><a href="#hooks">Hooks</a></li>
+        <li><a href="#laws">Design laws</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to dark theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8 8 0 0 1 9.4 4a8 8 0 1 0 10.6 10.6Z"/></svg>
+      </button>
+      <a class="btn btn-brand btn-sm" href="https://skills.stryxlabs.com/#install">Install</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="sky" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-title">
+        <p class="kicker reveal">Stryx Skills <span aria-hidden="true">·</span> for Claude Code</p>
+        <h1 id="hero-title" class="display reveal">The lab's methods, <em>grown into one tree.</em></h1>
+      </div>
+      <div class="hero-copy">
+        <p class="lead reveal">Stryx Skills gives Claude Code the methods Stryx Labs uses on its own products: 94 skills and 32 agents, each written for one kind of work. Claude loads the right one by itself when the moment comes.</p>
+        <div class="cta-row reveal">
+          <a class="btn btn-brand" href="https://skills.stryxlabs.com/#install">Install on Windows</a>
+          <a class="btn btn-ghost" href="https://skills.stryxlabs.com/">See the product page <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="fine reveal">Free to use. No fee, no subscription, no key, no sign-up.</p>
+      </div>
+      <div class="hero-console reveal">
+        <div class="console" role="group" aria-label="Install command for Windows PowerShell">
+          <div class="console-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Windows PowerShell</span></div>
+          <div class="console-body">
+            <code class="cmd"><span class="ps" aria-hidden="true">PS&gt;</span> <span class="kw">irm</span> <span class="url">https://skills.stryxlabs.com/install.ps1</span> <span class="kw">| iex</span></code>
+            <button type="button" class="copy" data-copy="irm https://skills.stryxlabs.com/install.ps1 | iex">Copy</button>
+          </div>
+          <p class="console-note">Installs all 94 skills, 32 agents and the brain program as one set.</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="spectrum" aria-hidden="true"><span style="--band:var(--g0);flex:15"></span><span style="--band:var(--g1);flex:13"></span><span style="--band:var(--g2);flex:10"></span><span style="--band:var(--g3);flex:12"></span><span style="--band:var(--g4);flex:17"></span><span style="--band:var(--g5);flex:9"></span><span style="--band:var(--g6);flex:15"></span><span style="--band:var(--g7);flex:3"></span></div>
+      <dl class="stats">
+        <div><dt>skills in eight groups</dt><dd>94</dd></div>
+        <div><dt>agents work beside them</dt><dd>32</dd></div>
+        <div><dt>hook files act on their own</dt><dd>46</dd></div>
+        <div><dt>design laws, each with its check</dt><dd>62</dd></div>
+        <div><dt>ready ops in the design kitchen</dt><dd>52</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section what" id="what" aria-labelledby="what-title">
+    <div class="wrap what-grid">
+      <header class="section-head">
+        <p class="kicker">What it does</p>
+        <h2 id="what-title">Every piece <em>is exact.</em></h2>
+        <p class="section-lead">A skill is a written method for one kind of work: when to use it, what it covers, what it hands on, and the checks that prove it is done.</p>
+      </header>
+      <ol class="tenets">
+        <li><span class="num" aria-hidden="true">i</span><h3>The right method, without asking.</h3><p>A router picks the skills a request needs before Claude starts.</p></li>
+        <li><span class="num" aria-hidden="true">ii</span><h3>Done means proven.</h3><p>Hook files block dangerous commands, scan for secrets and refuse a “done” without proof.</p></li>
+        <li><span class="num" aria-hidden="true">iii</span><h3>Designs held to rules.</h3><p>The design brain checks every design against 62 laws and keeps 52 ready ops for glass, metal, water, sky and light.</p></li>
+        <li><span class="num" aria-hidden="true">iv</span><h3>Keys kept out of sight.</h3><p>The Stryx Tools mod keeps your keys in a Vault. They are used by name and never shown.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section groups" id="groups" aria-labelledby="groups-title">
+    <div class="wrap">
+      <header class="section-head narrow">
+        <p class="kicker">The tree</p>
+        <h2 id="groups-title">Eight groups, <em>one band of light each.</em></h2>
+        <p class="section-lead">From the red of planning to the violet of the modes. Each leaf is one skill, 94 in all. Point at a group to light its branch.</p>
+      </header>
+      <div class="groups-grid">
+        <figure class="tree-frame">
+          <!-- design-detect waive shape-assembled-illustration: this is a data figure, one leaf per skill (94) on eight group branches, not decoration. -->
+          <svg class="tree" id="tree" viewBox="0 0 640 660" role="img" aria-labelledby="tree-title tree-desc" data-active="">
+  <title id="tree-title">The Stryx Skills tree</title>
+  <desc id="tree-desc">A tree with eight branches, one per group, and one leaf per skill: 94 leaves, reflected in a lake.</desc>
+  <defs>
+    <radialGradient id="halo-0"><stop offset="0" style="stop-color:var(--g0)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g0)" stop-opacity="0"/></radialGradient><radialGradient id="halo-1"><stop offset="0" style="stop-color:var(--g1)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g1)" stop-opacity="0"/></radialGradient><radialGradient id="halo-2"><stop offset="0" style="stop-color:var(--g2)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g2)" stop-opacity="0"/></radialGradient><radialGradient id="halo-3"><stop offset="0" style="stop-color:var(--g3)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g3)" stop-opacity="0"/></radialGradient><radialGradient id="halo-4"><stop offset="0" style="stop-color:var(--g4)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g4)" stop-opacity="0"/></radialGradient><radialGradient id="halo-5"><stop offset="0" style="stop-color:var(--g5)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g5)" stop-opacity="0"/></radialGradient><radialGradient id="halo-6"><stop offset="0" style="stop-color:var(--g6)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g6)" stop-opacity="0"/></radialGradient><radialGradient id="halo-7"><stop offset="0" style="stop-color:var(--g7)" stop-opacity=".5"/><stop offset="1" style="stop-color:var(--g7)" stop-opacity="0"/></radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <mask id="reflect-mask" maskUnits="userSpaceOnUse" x="0" y="470" width="640" height="190"><rect x="0" y="470" width="640" height="190" fill="url(#fade)"/></mask>
+  </defs>
+  <g id="crown"><path class="trunk" d="M307,470 C314,410 311,350 317,298 L323,298 C329,350 326,410 333,470 Z"/><path class="root" d="M308,470 q-30,2 -52,10"/><path class="root" d="M332,470 q34,1 58,9"/><g class="branch" data-g="0" style="--band:var(--g0);--sway:9.0s;--sd:0.0s;transform-origin:320px 398px"><circle class="halo" cx="92" cy="292" r="50" fill="url(#halo-0)"/><path class="limb" d="M320,398 C279.0,352.0 165.0,326.0 92,292"/><circle class="leaf" cx="243.9" cy="353.5" r="5.7" style="--d:0.00s;--tw:2.6s"/><circle class="leaf twinkle" cx="239.3" cy="341.5" r="7.0" style="--d:0.04s;--tw:5.1s"/><circle class="leaf" cx="239.1" cy="344.8" r="7.5" style="--d:0.07s;--tw:3.8s"/><circle class="leaf" cx="197.3" cy="329.3" r="5.8" style="--d:0.11s;--tw:4.3s"/><circle class="leaf twinkle" cx="214.2" cy="344.7" r="5.2" style="--d:0.14s;--tw:4.4s"/><circle class="leaf" cx="200.4" cy="334.4" r="6.9" style="--d:0.18s;--tw:3.5s"/><circle class="leaf" cx="174.6" cy="315.1" r="7.1" style="--d:0.21s;--tw:2.7s"/><circle class="leaf twinkle" cx="164.6" cy="328.0" r="7.3" style="--d:0.25s;--tw:3.0s"/><circle class="leaf" cx="122.4" cy="317.7" r="7.2" style="--d:0.28s;--tw:2.6s"/><circle class="leaf" cx="112.9" cy="302.8" r="4.6" style="--d:0.32s;--tw:4.5s"/><circle class="leaf twinkle" cx="144.9" cy="303.4" r="4.3" style="--d:0.35s;--tw:4.3s"/><circle class="leaf" cx="133.7" cy="316.6" r="4.3" style="--d:0.39s;--tw:4.1s"/><circle class="leaf" cx="118.4" cy="296.6" r="4.9" style="--d:0.42s;--tw:4.4s"/><circle class="leaf twinkle" cx="110.7" cy="292.2" r="6.4" style="--d:0.46s;--tw:3.2s"/><circle class="leaf" cx="81.0" cy="301.8" r="5.9" style="--d:0.49s;--tw:5.0s"/></g><g class="branch" data-g="1" style="--band:var(--g1);--sway:8.7s;--sd:-0.7s;transform-origin:320px 352px"><circle class="halo" cx="118" cy="172" r="50" fill="url(#halo-1)"/><path class="limb" d="M320,352 C283.6,306.0 182.6,206.0 118,172"/><circle class="leaf" cx="239.1" cy="283.0" r="7.2" style="--d:0.09s;--tw:3.8s"/><circle class="leaf twinkle" cx="248.1" cy="254.2" r="5.2" style="--d:0.12s;--tw:2.7s"/><circle class="leaf" cx="234.7" cy="268.9" r="5.9" style="--d:0.16s;--tw:4.8s"/><circle class="leaf" cx="210.5" cy="239.6" r="4.6" style="--d:0.20s;--tw:3.9s"/><circle class="leaf twinkle" cx="221.2" cy="240.2" r="5.5" style="--d:0.23s;--tw:2.6s"/><circle class="leaf" cx="191.2" cy="213.8" r="5.0" style="--d:0.27s;--tw:2.8s"/><circle class="leaf" cx="172.5" cy="193.0" r="5.7" style="--d:0.30s;--tw:4.7s"/><circle class="leaf twinkle" cx="166.3" cy="214.5" r="6.1" style="--d:0.34s;--tw:3.7s"/><circle class="leaf" cx="149.9" cy="198.4" r="6.4" style="--d:0.37s;--tw:4.2s"/><circle class="leaf" cx="146.6" cy="169.4" r="5.6" style="--d:0.41s;--tw:2.7s"/><circle class="leaf twinkle" cx="158.4" cy="176.8" r="7.4" style="--d:0.44s;--tw:4.0s"/><circle class="leaf" cx="120.5" cy="196.3" r="5.9" style="--d:0.47s;--tw:5.1s"/><circle class="leaf" cx="118.1" cy="158.2" r="5.2" style="--d:0.51s;--tw:2.6s"/></g><g class="branch" data-g="2" style="--band:var(--g2);--sway:9.1s;--sd:-1.4s;transform-origin:320px 322px"><circle class="halo" cx="205" cy="88" r="50" fill="url(#halo-2)"/><path class="limb" d="M320,322 C299.3,276.0 241.8,122.0 205,88"/><circle class="leaf" cx="276.0" cy="233.3" r="4.9" style="--d:0.18s;--tw:5.2s"/><circle class="leaf twinkle" cx="263.5" cy="208.3" r="7.4" style="--d:0.21s;--tw:4.1s"/><circle class="leaf" cx="271.9" cy="189.5" r="5.4" style="--d:0.25s;--tw:3.2s"/><circle class="leaf" cx="243.8" cy="171.4" r="6.2" style="--d:0.29s;--tw:3.6s"/><circle class="leaf twinkle" cx="234.8" cy="158.8" r="7.4" style="--d:0.32s;--tw:4.3s"/><circle class="leaf" cx="249.4" cy="146.1" r="5.2" style="--d:0.35s;--tw:5.0s"/><circle class="leaf" cx="251.0" cy="113.3" r="6.8" style="--d:0.39s;--tw:2.9s"/><circle class="leaf twinkle" cx="199.5" cy="102.1" r="6.7" style="--d:0.43s;--tw:2.6s"/><circle class="leaf" cx="225.0" cy="81.6" r="5.9" style="--d:0.46s;--tw:3.7s"/><circle class="leaf" cx="195.4" cy="88.5" r="7.3" style="--d:0.50s;--tw:3.8s"/></g><g class="branch" data-g="3" style="--band:var(--g3);--sway:8.3s;--sd:-2.1s;transform-origin:320px 302px"><circle class="halo" cx="306" cy="46" r="50" fill="url(#halo-3)"/><path class="limb" d="M320,302 C317.5,256.0 310.5,80.0 306,46"/><circle class="leaf" cx="331.6" cy="187.6" r="6.9" style="--d:0.27s;--tw:3.1s"/><circle class="leaf twinkle" cx="325.8" cy="184.5" r="5.4" style="--d:0.31s;--tw:2.8s"/><circle class="leaf" cx="325.2" cy="152.6" r="4.7" style="--d:0.34s;--tw:3.8s"/><circle class="leaf" cx="323.0" cy="148.4" r="5.1" style="--d:0.38s;--tw:5.1s"/><circle class="leaf twinkle" cx="322.9" cy="136.0" r="6.6" style="--d:0.41s;--tw:3.2s"/><circle class="leaf" cx="325.0" cy="120.2" r="6.9" style="--d:0.45s;--tw:3.5s"/><circle class="leaf" cx="314.9" cy="84.9" r="6.4" style="--d:0.48s;--tw:4.2s"/><circle class="leaf twinkle" cx="316.8" cy="74.0" r="6.0" style="--d:0.52s;--tw:4.4s"/><circle class="leaf" cx="320.0" cy="75.2" r="4.3" style="--d:0.55s;--tw:4.1s"/><circle class="leaf" cx="320.5" cy="63.3" r="6.1" style="--d:0.59s;--tw:2.9s"/><circle class="leaf twinkle" cx="290.8" cy="58.9" r="5.5" style="--d:0.62s;--tw:4.8s"/><circle class="leaf" cx="280.7" cy="56.2" r="7.6" style="--d:0.66s;--tw:3.9s"/></g><g class="branch" data-g="4" style="--band:var(--g4);--sway:7.9s;--sd:-2.8s;transform-origin:320px 306px"><circle class="halo" cx="404" cy="62" r="50" fill="url(#halo-4)"/><path class="limb" d="M320,306 C335.1,260.0 377.1,96.0 404,62"/><circle class="leaf" cx="358.1" cy="190.4" r="5.4" style="--d:0.36s;--tw:4.1s"/><circle class="leaf twinkle" cx="363.3" cy="190.0" r="7.1" style="--d:0.40s;--tw:2.9s"/><circle class="leaf" cx="365.1" cy="179.7" r="7.1" style="--d:0.43s;--tw:3.1s"/><circle class="leaf" cx="345.8" cy="157.1" r="7.5" style="--d:0.46s;--tw:4.6s"/><circle class="leaf twinkle" cx="359.8" cy="168.2" r="5.7" style="--d:0.50s;--tw:4.1s"/><circle class="leaf" cx="354.2" cy="148.6" r="6.8" style="--d:0.54s;--tw:4.0s"/><circle class="leaf" cx="360.9" cy="155.9" r="7.4" style="--d:0.57s;--tw:4.5s"/><circle class="leaf twinkle" cx="382.6" cy="119.2" r="5.6" style="--d:0.60s;--tw:3.3s"/><circle class="leaf" cx="365.1" cy="97.5" r="5.4" style="--d:0.64s;--tw:3.5s"/><circle class="leaf" cx="389.6" cy="105.6" r="6.7" style="--d:0.68s;--tw:2.7s"/><circle class="leaf twinkle" cx="365.5" cy="102.0" r="5.5" style="--d:0.71s;--tw:5.0s"/><circle class="leaf" cx="384.4" cy="103.1" r="6.6" style="--d:0.74s;--tw:4.8s"/><circle class="leaf" cx="386.7" cy="67.4" r="4.6" style="--d:0.78s;--tw:3.8s"/><circle class="leaf twinkle" cx="367.2" cy="85.3" r="6.5" style="--d:0.82s;--tw:4.4s"/><circle class="leaf" cx="373.1" cy="71.1" r="4.4" style="--d:0.85s;--tw:3.4s"/><circle class="leaf" cx="426.3" cy="52.7" r="5.8" style="--d:0.89s;--tw:2.8s"/><circle class="leaf twinkle" cx="409.2" cy="70.2" r="4.5" style="--d:0.92s;--tw:2.8s"/></g><g class="branch" data-g="5" style="--band:var(--g5);--sway:7.2s;--sd:-3.5s;transform-origin:320px 326px"><circle class="halo" cx="494" cy="116" r="50" fill="url(#halo-5)"/><path class="limb" d="M320,326 C351.3,280.0 438.3,150.0 494,116"/><circle class="leaf" cx="379.8" cy="243.7" r="7.5" style="--d:0.45s;--tw:2.8s"/><circle class="leaf twinkle" cx="397.1" cy="208.4" r="7.2" style="--d:0.48s;--tw:4.3s"/><circle class="leaf" cx="402.9" cy="212.9" r="7.4" style="--d:0.52s;--tw:4.7s"/><circle class="leaf" cx="402.5" cy="182.5" r="6.9" style="--d:0.55s;--tw:5.0s"/><circle class="leaf twinkle" cx="435.3" cy="161.8" r="6.7" style="--d:0.59s;--tw:3.5s"/><circle class="leaf" cx="447.4" cy="156.7" r="4.2" style="--d:0.62s;--tw:4.7s"/><circle class="leaf" cx="451.0" cy="124.0" r="5.2" style="--d:0.66s;--tw:3.5s"/><circle class="leaf twinkle" cx="510.8" cy="115.1" r="4.2" style="--d:0.69s;--tw:4.7s"/><circle class="leaf" cx="488.8" cy="130.9" r="6.5" style="--d:0.73s;--tw:2.9s"/></g><g class="branch" data-g="6" style="--band:var(--g6);--sway:7.5s;--sd:-4.2s;transform-origin:320px 356px"><circle class="halo" cx="552" cy="220" r="50" fill="url(#halo-6)"/><path class="limb" d="M320,356 C361.8,310.0 477.8,254.0 552,220"/><circle class="leaf" cx="414.0" cy="292.6" r="5.1" style="--d:0.54s;--tw:5.0s"/><circle class="leaf twinkle" cx="399.4" cy="291.5" r="5.3" style="--d:0.58s;--tw:4.4s"/><circle class="leaf" cx="434.4" cy="284.6" r="6.3" style="--d:0.61s;--tw:4.2s"/><circle class="leaf" cx="436.6" cy="267.8" r="4.4" style="--d:0.65s;--tw:3.6s"/><circle class="leaf twinkle" cx="468.4" cy="270.3" r="6.9" style="--d:0.68s;--tw:4.3s"/><circle class="leaf" cx="441.0" cy="283.8" r="5.3" style="--d:0.72s;--tw:5.2s"/><circle class="leaf" cx="458.7" cy="262.1" r="6.0" style="--d:0.75s;--tw:3.0s"/><circle class="leaf twinkle" cx="461.7" cy="273.6" r="6.9" style="--d:0.79s;--tw:5.1s"/><circle class="leaf" cx="479.8" cy="255.9" r="7.6" style="--d:0.82s;--tw:3.2s"/><circle class="leaf" cx="479.2" cy="249.8" r="5.7" style="--d:0.86s;--tw:4.3s"/><circle class="leaf twinkle" cx="512.3" cy="228.0" r="5.3" style="--d:0.89s;--tw:5.0s"/><circle class="leaf" cx="545.8" cy="232.7" r="4.8" style="--d:0.93s;--tw:3.7s"/><circle class="leaf" cx="565.3" cy="231.8" r="6.4" style="--d:0.96s;--tw:4.3s"/><circle class="leaf twinkle" cx="552.3" cy="233.9" r="5.6" style="--d:1.00s;--tw:3.1s"/><circle class="leaf" cx="535.7" cy="220.8" r="5.3" style="--d:1.03s;--tw:4.4s"/></g><g class="branch" data-g="7" style="--band:var(--g7);--sway:7.7s;--sd:-4.9s;transform-origin:320px 404px"><circle class="halo" cx="540" cy="330" r="50" fill="url(#halo-7)"/><path class="limb" d="M320,404 C359.6,358.0 469.6,364.0 540,330"/><circle class="leaf" cx="395.3" cy="367.2" r="6.3" style="--d:0.63s;--tw:5.1s"/><circle class="leaf twinkle" cx="450.2" cy="342.0" r="6.2" style="--d:0.67s;--tw:2.9s"/><circle class="leaf" cx="547.8" cy="320.3" r="6.2" style="--d:0.70s;--tw:2.7s"/></g></g>
+  <g class="lake" aria-hidden="true">
+    <line class="shore" x1="40" y1="470" x2="600" y2="470"/>
+    <g mask="url(#reflect-mask)"><use href="#crown" transform="translate(0 667.4) scale(1 -0.42)" class="reflection"/></g>
+    <line class="ripple" x1="150" y1="492" x2="300" y2="492"/><line class="ripple" x1="360" y1="508" x2="520" y2="508"/>
+    <line class="ripple" x1="210" y1="532" x2="420" y2="532"/>
+  </g>
+</svg>
+          <figcaption>
+            <span>One leaf per skill. The lake holds its reflection.</span>
+            <button type="button" class="pause" id="pause">Pause the tree</button>
+          </figcaption>
+        </figure>
+        <ol class="ledger" id="ledger"><li class="book" data-g="0" style="--band:var(--g0);--share:0.882">
+  <p class="book-kicker">Book one of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="0" aria-pressed="false">Plan and decide<span class="book-count"><span class="visually-hidden">: </span>15<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">Before the work: what to build, how, in what order, and who does it. First book: <code>stryx:ai-power</code></p>
+</li>
+<li class="book" data-g="1" style="--band:var(--g1);--share:0.765">
+  <p class="book-kicker">Book two of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="1" aria-pressed="false">Quality<span class="book-count"><span class="visually-hidden">: </span>13<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">Finding what is wrong, proving what is right, and making code better. First book: <code>stryx:debug</code></p>
+</li>
+<li class="book" data-g="2" style="--band:var(--g2);--share:0.588">
+  <p class="book-kicker">Book three of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="2" aria-pressed="false">Design and media<span class="book-count"><span class="visually-hidden">: </span>10<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">Everything you see and hear: screens, pictures, 3D, video, sound. First book: <code>stryx:design</code></p>
+</li>
+<li class="book" data-g="3" style="--band:var(--g3);--share:0.706">
+  <p class="book-kicker">Book four of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="3" aria-pressed="false">Languages<span class="book-count"><span class="visually-hidden">: </span>12<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">One book per programming language or app platform. First book: <code>stryx:electron</code></p>
+</li>
+<li class="book" data-g="4" style="--band:var(--g4);--share:1.000">
+  <p class="book-kicker">Book five of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="4" aria-pressed="false">Web and data<span class="book-count"><span class="visually-hidden">: </span>17<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">Websites, online services, databases and the network. First book: <code>stryx:integrations</code></p>
+</li>
+<li class="book" data-g="5" style="--band:var(--g5);--share:0.529">
+  <p class="book-kicker">Book six of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="5" aria-pressed="false">Writing<span class="book-count"><span class="visually-hidden">: </span>9<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">Words for people: messages, docs, proposals, announcements. First book: <code>stryx:writing</code></p>
+</li>
+<li class="book" data-g="6" style="--band:var(--g6);--share:0.882">
+  <p class="book-kicker">Book seven of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="6" aria-pressed="false">Workflow<span class="book-count"><span class="visually-hidden">: </span>15<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">Keeping the work moving and remembered: git, handoffs, lessons, setup, tools. First book: <code>stryx:devops</code></p>
+</li>
+<li class="book" data-g="7" style="--band:var(--g7);--share:0.176">
+  <p class="book-kicker">Book eight of eight</p>
+  <h3 class="book-name"><button type="button" class="book-btn" data-g="7" aria-pressed="false">Modes<span class="book-count"><span class="visually-hidden">: </span>3<span class="visually-hidden"> skills</span></span></button></h3>
+  <span class="book-bar" aria-hidden="true"></span>
+  <p class="book-desc">The words you type to steer Claude itself. First book: <code>stryx:modes</code></p>
+</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hooks" id="hooks" aria-labelledby="hooks-title">
+    <div class="wrap">
+      <header class="section-head narrow">
+        <p class="kicker">Hooks and proof</p>
+        <h2 id="hooks-title">Forty-six hooks <em>act on their own.</em></h2>
+        <p class="section-lead">A hook runs by itself at a fixed moment: before Claude starts, before a command, after an edit, before Claude says done. Four of them, at their moments:</p>
+      </header>
+      <ol class="turn">
+        <li><p class="moment">Before Claude starts</p><h3>A router</h3><p>picks the skills a request needs.</p></li>
+        <li><p class="moment">Before a command</p><h3>A guard</h3><p>blocks dangerous commands.</p></li>
+        <li><p class="moment">After an edit</p><h3>A design detector</h3><p>checks the page after every UI edit.</p></li>
+        <li><p class="moment">Before Claude says done</p><h3>A stop judge</h3><p>refuses a “done” that has no proof.</p></li>
+      </ol>
+      <div class="turn-rail" aria-hidden="true"><span class="spark"></span></div>
+      <p class="also">Three more watch the whole turn: <strong>a secret scanner</strong> for keys and passwords, <strong>a test check</strong> that asks whether a test exists for the change, and <strong>a logbook</strong> that writes down every failure.</p>
+    </div>
+  </section>
+
+  <section class="section laws" id="laws" aria-labelledby="laws-title">
+    <div class="wrap laws-grid">
+      <header class="section-head">
+        <p class="kicker">Design laws</p>
+        <h2 id="laws-title">At the centre, <em>one brain.</em></h2>
+        <p class="section-lead">One program with one command line, <code>brain</code>. Designs are planned with it, checked by it and remembered in it. The brain you install starts with its laws and its kitchen, and learns from your own files.</p>
+      </header>
+      <div class="figures">
+        <div class="figure">
+          <p class="big">62</p>
+          <p><strong>laws.</strong> Rules every design is checked against, each with its check and its fix.</p>
+        </div>
+        <div class="figure">
+          <p class="big">52</p>
+          <p><strong>ready ops</strong> in its kitchen:</p>
+          <p class="ops">glass <span aria-hidden="true">·</span> metal <span aria-hidden="true">·</span> water <span aria-hidden="true">·</span> sky <span aria-hidden="true">·</span> light <span aria-hidden="true">·</span> post-processing</p>
+        </div>
+        <p class="proof">Every page of the Stryx sites was designed and built with these skills. This one too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section install" id="install" aria-labelledby="install-title">
+    <div class="wrap install-grid">
+      <header class="section-head">
+        <p class="kicker">Install</p>
+        <h2 id="install-title">One command. <em>The whole set.</em></h2>
+        <ol class="steps">
+          <li>Open Windows PowerShell.</li>
+          <li>Paste the line and press Enter.</li>
+          <li>Restart Claude Code. The set is there, and Claude loads each skill when its moment comes.</li>
+        </ol>
+      </header>
+      <div class="install-side">
+        <div class="console" role="group" aria-label="Install command for Windows PowerShell">
+          <div class="console-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Windows PowerShell</span></div>
+          <div class="console-body">
+            <code class="cmd"><span class="ps" aria-hidden="true">PS&gt;</span> <span class="kw">irm</span> <span class="url">https://skills.stryxlabs.com/install.ps1</span> <span class="kw">| iex</span></code>
+            <button type="button" class="copy" data-copy="irm https://skills.stryxlabs.com/install.ps1 | iex">Copy</button>
+          </div>
+        </div>
+        <a class="btn btn-brand btn-xl" href="https://skills.stryxlabs.com/#install">Install on Windows</a>
+        <ul class="notes">
+          <li>No skill is offered alone: the books only make the tree together.</li>
+          <li>The command installs the lite version. The full 3D version (25.5 GB) is on the product page.</li>
+          <li>Windows today.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <header class="section-head">
+        <p class="kicker">Questions</p>
+        <h2 id="faq-title">Before you <em>install.</em></h2>
+      </header>
+      <div class="qa">
+        <details><summary>What is a skill?</summary><p>A written method for one kind of work: when to use it, what it covers, what it hands on, and the checks that prove it is done. Every skill page also says what it is not for, and which skill takes over.</p></details>
+        <details><summary>Does it cost anything?</summary><p>No. You can use it at no cost: no fee, no subscription, no key and no sign-up. The <a href="https://stryxlabs.com/license">Stryx Labs License v1.1</a> allows personal and commercial use.</p></details>
+        <details><summary>Which systems does it run on?</summary><p>Windows today. It runs on your own machine.</p></details>
+        <details><summary>Can I install one skill on its own?</summary><p>No. The command installs all 94 skills, 32 agents and the brain program as one set. The books only make the tree together.</p></details>
+        <details><summary>Where is the source?</summary><p>Not in this repository. It holds the project page and the issue tracker only. The set installs from <a href="https://skills.stryxlabs.com/">skills.stryxlabs.com</a>, and its licence does not allow posting it on GitHub.</p></details>
+        <details><summary>Where do I report a bug or ask for a feature?</summary><p>Open an issue in this repository with the bug form or the feature form. Take keys and passwords out of any log before you paste it.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="wrap closing-in">
+      <h2 id="closing-title">Grow the tree <em>in your Claude Code.</em></h2>
+      <a class="btn btn-brand btn-xl" href="https://skills.stryxlabs.com/#install">Install on Windows</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <p class="footer-lab">Stryx Skills is made by <a href="https://stryxlabs.com/">Stryx Labs</a>, an independent technology lab in New Jersey, founded in 2026 by Anish Trivedi and Kruti Trivedi.</p>
+    <ul class="footer-links">
+      <li><a href="https://skills.stryxlabs.com/">Product page</a></li>
+      <li><a href="https://stryxlabs.com/license">License v1.1</a></li>
+      <li><a href="https://github.com/omanishay-cyber/stryx-skills/issues">Issues</a></li>
+      <li><a href="https://stryxlabs.com/">Stryx Labs</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Stryx Labs</p>
+  </div>
+</footer>
+<p class="visually-hidden" id="live" aria-live="polite"></p>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
